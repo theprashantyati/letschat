@@ -1,18 +1,74 @@
-# React + Vite
+# Frontend (React) - Login & Signup Guide
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This app uses **Clerk** for authentication. You can log in / sign up through the **/auth** page.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 1) Prerequisites
 
-## React Compiler
+- The backend must be running and reachable.
+- You must have a valid **Clerk publishable key** configured in the frontend environment.
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+---
 
-Note: This will impact Vite dev & build performances.
+## 2) Start the frontend (local development)
 
-## Expanding the ESLint configuration
+From the repo root:
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+Open the URL shown in the terminal (typically `http://localhost:5173`).
+
+---
+
+## 3) Where to log in / sign up
+
+1. Open the app in your browser.
+2. Go to: **`/auth`**
+   - Example: `http://localhost:5173/auth`
+3. Use the Clerk UI to **Sign in** or **Create account**.
+
+If you are already signed in, the app will redirect you to **`/` (Chat page)** automatically.
+
+---
+
+## 4) Manual signup & login flow
+
+### Sign up
+
+1. On `/auth`, choose **Create account** (or **Sign up**).
+2. Enter your email (and name if prompted).
+3. Complete any verification step required by Clerk.
+4. After verification, you’ll be redirected to the chat experience.
+
+### Log in
+
+1. On `/auth`, choose **Sign in**.
+2. Enter your email/password (or use any configured providers).
+3. Complete verification if Clerk prompts it.
+4. After successful login, you’ll land on **Chat (`/`)**.
+
+---
+
+## 5) Troubleshooting
+
+### App keeps redirecting to `/auth`
+- You’re not signed in, or Clerk isn’t loading correctly.
+- Confirm your frontend env is set:
+  - `VITE_CLERK_PUBLISHABLE_KEY`
+
+### Auth fails / blank page
+- Check the browser console for Clerk-related errors.
+- Ensure the backend CORS/FRONTEND_URL is configured correctly.
+
+---
+
+## 6) Notes
+
+- This README covers the **user-facing** login/signup steps.
+- For production/deployment environment variables, refer to the root `README.md`.
+
