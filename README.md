@@ -1,13 +1,7 @@
 # 💬 Full Stack Real-Time Chat App 🚀
 
-![Demo App](/frontend/public/screenshot-for-readme.png)
-
----
-
-## ✨ Highlights:
-
 - 💬 Full Stack Real-Time Chat Application built from scratch
-- ⚛️ Frontend with React, Tailwind CSS & Hero UI
+- ⚛️ Frontend with React, Tailwind CSS
 - 🚀 Backend with Node.js & Express.js
 - 🔐 Authentication with Clerk
 - 🗄️ MongoDB Database Integration
@@ -25,11 +19,6 @@
 - ⏰ Cron Jobs from Scratch
 - 🛡️ Express Middleware Deep Dive
 - 📁 File Uploads & Media Handling
-- 🌐 Deploy Your App with a Live URL
-- 🆓 100% Free Setup to Get Started
-- 📂 Full Source Code Included
-- 🎯 Resume-Ready Production-Style Project
-
 ---
 
 ## 🧪 Environment Variables
@@ -66,8 +55,6 @@ VITE_CLERK_PUBLISHABLE_KEY=<your_clerk_publishable_key>
 
 - React
 - Tailwind CSS
-- Hero UI
-- Zustand
 - Socket.io Client
 
 ### Backend
@@ -85,4 +72,4 @@ VITE_CLERK_PUBLISHABLE_KEY=<your_clerk_publishable_key>
 - Backend: Render
 - Database: MongoDB Atlas
 
----
+
