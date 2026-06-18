@@ -64,16 +64,23 @@ function ChatSidebar() {
         !isLargeScreen && activeConversationId ? "hidden lg:flex" : "flex"
       }`}
     >
-      <div className="shrink-0 border-b border-border px-2 pb-2 pt-2.5 sm:px-3 sm:pt-3">
-        <div className="flex items-center gap-2 px-0.5 sm:gap-2.5 sm:px-1">
-          <AppLogo size={32} className="size-8 shrink-0 rounded-[9px] sm:size-8.5" alt="" />
-          <p className="flex-1 truncate text-lg font-bold tracking-tight sm:text-[22px]">
-            {APP_NAME}
-          </p>
+      <div className="shrink-0 border-b border-border/50 bg-gradient-to-b from-background via-background to-transparent px-2 pb-3 pt-3 sm:px-3 sm:pt-4">
+        <div className="flex items-center justify-between gap-2 px-0.5 sm:gap-2.5 sm:px-1 mb-4">
+          <div className="flex items-center gap-2.5 flex-1">
+            <div className="bg-gradient-to-br from-accent to-accent/80 rounded-xl p-2 shadow-md">
+              <AppLogo size={24} className="size-6 shrink-0" alt="" />
+            </div>
+            <div className="flex-1 min-w-0">
+              <p className="truncate text-base font-bold tracking-tight sm:text-lg">
+                {APP_NAME}
+              </p>
+              <p className="text-xs text-muted">Connect & Chat</p>
+            </div>
+          </div>
           <UserButton
             appearance={{
               elements: {
-                avatarBox: "size-8",
+                avatarBox: "size-9 rounded-lg",
               },
             }}
           />

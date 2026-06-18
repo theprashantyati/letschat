@@ -10,12 +10,12 @@ export function MessageBubble({ message }) {
   const hasVideo = Boolean(message.videoUrl);
 
   return (
-    <div className={`flex w-full ${isOwnMessage ? "justify-end" : "justify-start"}`}>
+    <div className={`flex w-full ${isOwnMessage ? "justify-end" : "justify-start"} gap-2`}>
       <div
-        className={`max-w-[min(90%,28rem)] rounded-2xl px-3 py-2 text-[15px] leading-snug sm:max-w-[min(75%,28rem)] sm:px-3.5 ${
+        className={`max-w-[min(90%,28rem)] rounded-3xl px-4 py-3 text-[15px] leading-snug sm:max-w-[min(75%,28rem)] sm:px-4 transition-all duration-200 hover:shadow-md ${
           isOwnMessage
-            ? "rounded-br-md bg-accent text-accent-foreground"
-            : "rounded-bl-md bg-surface"
+            ? "rounded-br-lg bg-gradient-to-br from-accent to-accent/90 text-accent-foreground shadow-sm"
+            : "rounded-bl-lg bg-gradient-to-br from-muted to-muted/80 shadow-xs"
         }`}
       >
         {hasImage ? (

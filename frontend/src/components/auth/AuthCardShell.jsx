@@ -1,35 +1,35 @@
 const cardClassName = [
-  "relative overflow-hidden rounded-[1.75rem]",
-  "border border-black/8 bg-white/75 backdrop-blur-2xl",
-  "shadow-[0_32px_90px_-24px_rgba(0,0,0,0.18),0_0_1px_rgba(0,0,0,0.06)]",
-  "dark:border-white/12 dark:bg-[#141416]/82",
-  "dark:shadow-[0_40px_100px_-28px_rgba(0,0,0,0.75),0_0_0_1px_rgba(255,255,255,0.06)_inset]",
+  "relative overflow-hidden rounded-2xl",
+  "border border-accent/20 bg-gradient-to-br from-background via-background to-background/95 backdrop-blur-2xl",
+  "shadow-[0_20px_70px_-20px_rgba(0,0,0,0.15),0_0_1px_rgba(0,0,0,0.05)]",
+  "dark:border-accent/30 dark:bg-gradient-to-br dark:from-background dark:via-background dark:to-background/90",
+  "dark:shadow-[0_20px_70px_-20px_rgba(0,0,0,0.6),0_0_0_1px_rgba(255,255,255,0.05)_inset]",
 ].join(" ");
 
 export function AuthCardShell({ children }) {
   return (
-    <div className="relative z-10 mx-auto w-full max-w-105">
+    <div className="relative z-10 mx-auto w-full max-w-md">
       <div className="relative">
         <div
           aria-hidden
-          className="pointer-events-none absolute -inset-px rounded-[1.85rem] bg-linear-to-b from-white/70 via-white/15 to-transparent opacity-80 dark:from-white/15 dark:via-white/5 dark:opacity-100"
+          className="pointer-events-none absolute -inset-px rounded-2xl bg-gradient-to-b from-accent/20 via-accent/5 to-transparent opacity-60 dark:from-accent/30 dark:via-accent/10 dark:opacity-80 blur-xl"
         />
         <div
           aria-hidden
-          className="pointer-events-none absolute inset-0 rounded-[1.8rem] shadow-[0_0_0_1px_rgba(255,255,255,0.55)_inset] dark:shadow-[0_0_0_1px_rgba(255,255,255,0.08)_inset]"
+          className="pointer-events-none absolute inset-0 rounded-2xl shadow-[0_0_0_1px_rgba(255,255,255,0.4)_inset] dark:shadow-[0_0_0_1px_rgba(255,255,255,0.1)_inset]"
         />
 
         <div className={cardClassName}>
           <div
             aria-hidden
-            className="pointer-events-none absolute -right-24 top-0 size-56 rounded-full bg-accent/12 blur-3xl dark:bg-accent/18"
+            className="pointer-events-none absolute -right-20 -top-20 size-48 rounded-full bg-accent/10 blur-3xl dark:bg-accent/15"
           />
           <div
             aria-hidden
-            className="pointer-events-none absolute inset-x-0 top-0 h-px bg-linear-to-r from-transparent via-accent/35 to-transparent dark:via-accent/40"
+            className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-accent/30 to-transparent dark:via-accent/40"
           />
 
-          <div className="relative px-8 pb-9 pt-10 sm:px-10 sm:pb-10 sm:pt-11">{children}</div>
+          <div className="relative px-6 pb-8 pt-9 sm:px-8 sm:pb-9 sm:pt-10">{children}</div>
         </div>
       </div>
     </div>

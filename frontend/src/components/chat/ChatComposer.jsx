@@ -44,18 +44,18 @@ export function ChatComposer() {
   };
 
   return (
-    <footer className="shrink-0 border-t border-border px-1.5 pb-2 pt-2 sm:px-2">
+    <footer className="shrink-0 border-t border-border/50 bg-background/95 px-2 pb-3 pt-3 sm:px-3 backdrop-blur-sm">
       {isSendingMedia ? (
-        <div className="mx-auto mb-2 flex max-w-full items-center gap-2 rounded-xl border border-border bg-surface px-3 py-2 text-sm text-muted">
+        <div className="mx-auto mb-3 flex max-w-full items-center gap-2 rounded-xl border border-accent/30 bg-accent/10 px-3 py-2.5 text-sm text-accent">
           <LoaderIcon
-            className="size-4 shrink-0 animate-spin text-accent"
+            className="size-4 shrink-0 animate-spin"
             strokeWidth={2}
             aria-hidden
           />
-          <span className="truncate">Uploading media...</span>
+          <span className="truncate font-medium">Uploading media...</span>
         </div>
       ) : null}
-      <div className="mx-auto flex w-full max-w-full items-end gap-1.5 px-0.5 sm:gap-2 sm:px-1">
+      <div className="mx-auto flex w-full max-w-full items-end gap-2 px-0.5 sm:gap-2.5 sm:px-1">
         <input
           ref={mediaInputRef}
           type="file"
@@ -67,18 +67,18 @@ export function ChatComposer() {
           onChange={handleMediaPick}
         />
         <Button
-          variant="ghost"
+          variant="light"
           isIconOnly
           isDisabled={isSendingMedia}
-          className="size-9 shrink-0 touch-manipulation self-end text-accent"
+          className="size-10 shrink-0 touch-manipulation self-end text-accent hover:bg-accent/10 transition-colors"
           onPress={() => mediaInputRef.current?.click()}
         >
           <ImageIcon className="size-5 sm:size-6" strokeWidth={2} />
         </Button>
         <TextArea
           fullWidth
-          variant="secondary"
-          placeholder="iMessage"
+          variant="flat"
+          placeholder="Type a message...\nShift + Enter for new line"
           rows={1}
           value={composerText}
           onChange={handleComposerTextChange}
@@ -88,11 +88,20 @@ export function ChatComposer() {
               handleSend();
             }
           }}
-          className="flex-1 rounded-full"
+          className="flex-1 rounded-full transition-all"
         />
 
-        <Button variant="primary" isIconOnly isDisabled={!composerText.trim()} onPress={handleSend}>
-          <SendHorizontalIcon className="size-5" />
+        <Button 
+          isIconOnly 
+          isDisabled={!composerText.trim()} 
+          onPress={handleSend}
+          className={`shrink-0 touch-manipulation transition-all self-end rounded-full ${
+            composerText.trim()
+              ? "bg-gradient-to-br from-accent to-accent/90 text-white shadow-md hover:shadow-lg"
+              : "bg-muted text-muted-foreground"
+          }`}
+        >
+          <SendHorizontalIcon className="size-5" strokeWidth={2.5} />
         </Button>
       </div>
     </footer>

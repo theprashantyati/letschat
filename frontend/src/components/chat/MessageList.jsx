@@ -10,18 +10,23 @@ export function MessageList() {
   const messagesScrollRef = useScrollToBottom(activeConversationId, lastMessageId);
 
   return (
-    <div className="relative flex flex-1 flex-col overflow-hidden">
+    <div className="relative flex flex-1 flex-col overflow-hidden bg-gradient-to-b from-background/50 to-background">
       {activeConversation ? (
         <div
           ref={messagesScrollRef}
-          className="flex flex-1 flex-col gap-1 overflow-y-auto overscroll-contain px-2 py-3 sm:px-3 sm:py-4"
+          className="flex flex-1 flex-col gap-3 overflow-y-auto overscroll-contain px-3 py-4 sm:px-4 sm:py-5 scroll-smooth"
         >
-          <p className="mb-3 text-center text-[11px] font-medium uppercase tracking-wide text-muted">
-            Today
-          </p>
+          <div className="flex justify-center mb-2">
+            <div className="px-3 py-1 rounded-full bg-muted/40 backdrop-blur-sm">
+              <p className="text-center text-xs font-semibold uppercase tracking-wider text-muted/70">
+                Start of conversation
+              </p>
+            </div>
+          </div>
           {activeConversation.messages.map((message) => (
             <MessageBubble key={message.id} message={message} />
           ))}
+          <div className="h-2" />
         </div>
       ) : (
         <NoConversationPlaceholder />
