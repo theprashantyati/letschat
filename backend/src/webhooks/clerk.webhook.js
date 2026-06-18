@@ -33,11 +33,19 @@ router.post("/", async (req, res) => {
       const fullName =
         [u.first_name, u.last_name].filter(Boolean).join(" ") || u.username || email?.split("@")[0];
 
-      await User.findOneAndUpdate(
+      if (!email || !fullName) {
+        console.error(`Invalid user data for ${u.id}: missing email or fullName`);
+        res.status(400).json({ message: "Invalid user data" });
+        return;
+      }
+
+      const result = await User.findOneAndUpdate(
         { clerkId: u.id },
         { clerkId: u.id, email, fullName, profilePic: u.image_url },
         { new: true, upsert: true, setDefaultsOnInsert: true },
       );
+
+      console.log(`User ${evt.type}: ${u.id} (${email}) synced to MongoDB`);
     }
 
     if (evt.type === "user.deleted") {
