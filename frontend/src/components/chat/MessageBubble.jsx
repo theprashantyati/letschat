@@ -14,8 +14,8 @@ export function MessageBubble({ message }) {
       <div
         className={`max-w-[min(90%,28rem)] rounded-3xl px-4 py-3 text-[15px] leading-snug sm:max-w-[min(75%,28rem)] sm:px-4 transition-all duration-200 hover:shadow-md ${
           isOwnMessage
-            ? "rounded-br-lg bg-gradient-to-br from-accent to-accent/90 text-accent-foreground shadow-sm"
-            : "rounded-bl-lg bg-gradient-to-br from-muted to-muted/80 shadow-xs"
+            ? "rounded-br-lg bg-linear-to-r from-accent to-accent/90 text-accent-foreground shadow-sm"
+            : "rounded-bl-lg bg-linear-to-r from-muted to-muted/80 shadow-xs"
         }`}
       >
         {hasImage ? (

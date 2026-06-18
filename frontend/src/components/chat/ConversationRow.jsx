@@ -13,7 +13,7 @@ export function ConversationRow({ user, selected, onSelect }) {
       <AvatarWithOnlineIndicator isOnline={user.isOnline ?? true}>
         <Avatar className={`shrink-0 ${selected ? "ring-2 ring-accent/50" : "group-hover:ring-2 group-hover:ring-accent/30"} transition-all size-12`}>
           <Avatar.Image alt={user.name} src={user.avatarUrl} />
-          <Avatar.Fallback className="text-sm font-semibold bg-gradient-to-br from-accent/30 to-accent/20">
+          <Avatar.Fallback className="text-sm font-semibold bg-linear-to-r from-accent/30 to-accent/20">
             {user.initials}
           </Avatar.Fallback>
         </Avatar>

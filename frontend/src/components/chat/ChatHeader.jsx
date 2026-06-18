@@ -19,7 +19,7 @@ export function ChatHeader() {
   const { activeConversation, isLargeScreen } = useSelectedConversation();
 
   return (
-    <header className="sticky top-0 z-10 flex shrink-0 flex-wrap items-center gap-2 border-b border-border/50 bg-gradient-to-b from-background via-background to-transparent px-2 py-2 sm:gap-2.5 sm:px-3 sm:py-2.5 backdrop-blur-sm">
+    <header className="sticky top-0 z-10 flex shrink-0 flex-wrap items-center gap-2 border-b border-border/50 bg-linear-to-b from-background via-background to-transparent px-2 py-2 sm:gap-2.5 sm:px-3 sm:py-2.5 backdrop-blur-sm">
       {activeConversation && !isLargeScreen ? (
         <Button
           variant="light"
@@ -40,7 +40,7 @@ export function ChatHeader() {
                 alt={activeConversation.peer.name}
                 src={activeConversation.peer.avatarUrl}
               />
-              <Avatar.Fallback className="text-sm font-semibold bg-gradient-to-br from-accent/40 to-accent/30">
+              <Avatar.Fallback className="text-sm font-semibold bg-linear-to-r from-accent/40 to-accent/30">
                 {activeConversation.peer.initials}
               </Avatar.Fallback>
             </Avatar>
@@ -61,7 +61,7 @@ export function ChatHeader() {
         </>
       ) : (
         <div className="flex flex-1 items-center gap-3 sm:text-left">
-          <div className="bg-gradient-to-br from-accent/20 to-accent/10 rounded-lg p-2">
+          <div className="bg-linear-to-r from-accent/20 to-accent/10 rounded-lg p-2">
             <AppLogo size={32} className="rounded-lg" />
           </div>
           <div className="flex-1 text-center sm:text-left">

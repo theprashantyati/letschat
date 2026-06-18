@@ -97,7 +97,7 @@ export function ChatComposer() {
           onPress={handleSend}
           className={`shrink-0 touch-manipulation transition-all self-end rounded-full ${
             composerText.trim()
-              ? "bg-gradient-to-br from-accent to-accent/90 text-white shadow-md hover:shadow-lg"
+              ? "bg-linear-to-r from-accent to-accent/90 text-white shadow-md hover:shadow-lg"
               : "bg-muted text-muted-foreground"
           }`}
         >
