@@ -25,11 +25,13 @@ const publicDir = path.join(process.cwd(), "public");
 // it's important that you don't parse the webhook event data, it should be in the raw format
 app.use("/api/webhooks/clerk", express.raw({ type: "application/json" }), clerkWebhook);
 
-app.use(express.json());
+app.use(express.json()); 
+
+//using cors to set the (The server (backend) must allow it:"Yes, this frontend is allowed")
 app.use(cors({ origin: FRONTEND_URL, credentials: true }));
 app.use(clerkMiddleware());
 
-app.get("/health", (req, res) => {
+app.get("/health", (req, res) => { //this gonna tell if the server is properly working
   res.status(200).json({ ok: true });
 });
 

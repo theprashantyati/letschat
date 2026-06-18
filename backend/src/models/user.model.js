@@ -22,7 +22,7 @@ const userSchema = new mongoose.Schema(
     },
   },
   { timestamps: true }, // createdAt & updatedAt
-);
+);  // like it will tell when created and when updated 
 
 const User = mongoose.model("User", userSchema);
 
