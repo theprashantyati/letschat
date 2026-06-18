@@ -1,0 +1,33 @@
+services:
+  - type: web
+    name: letschat-backend
+    runtime: docker
+    plan: free
+    dockerfile: ./Dockerfile
+    dockerContext: .
+    region: oregon
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: "3001"
+      - key: MONGO_URI
+        sync: false
+      - key: CLERK_PUBLISHABLE_KEY
+        sync: false
+      - key: CLERK_SECRET_KEY
+        sync: false
+      - key: CLERK_WEBHOOK_SIGNING_SECRET
+        sync: false
+      - key: IMAGEKIT_PRIVATE_KEY
+        sync: false
+      - key: IMAGEKIT_PUBLIC_KEY
+        sync: false
+      - key: IMAGEKIT_URL_ENDPOINT
+        sync: false
+      - key: FRONTEND_URL
+        value: "https://yourdomain.com"
+        sync: false
+    healthCheckPath: /health
+    buildCommand: "npm run build"
+    startCommand: "node dist/index.js"
