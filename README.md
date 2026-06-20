@@ -11,7 +11,7 @@ A premium full-stack real-time chat application built using the MERN stack, feat
 ---
 
 ## 🚀 Features
-
+check LIVE: https://letschat-wp8r.onrender.com/
 ✨ **Real-Time Messaging** - Instant message delivery with Socket.io  
 🔐 **Secure Authentication** - JWT-based auth with Clerk integration  
 🟢 **Online Presence** - Real-time online/offline status tracking  
@@ -268,9 +268,10 @@ Contributions are welcome! Feel free to fork this repo and submit pull requests 
 
 ## 📬 Contact
 
-- **GitHub**: [Your GitHub Profile]
-- **LinkedIn**: [Your LinkedIn Profile]
-- **Email**: [Your Email]
+- **GitHub**: https://github.com/theprashantyati
+- **LinkedIn**: https://www.linkedin.com/in/prashant-yati-6157aa34a/
+- **Email**: prashantyati3690@gmail.com
+
 
 ---
 
